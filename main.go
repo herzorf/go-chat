@@ -1,1 +1,7 @@
-package go_chat
+package main
+
+import "fmt"
+
+func main() {
+	fmt.Println("hello world")
+}
