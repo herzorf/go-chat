@@ -18,9 +18,9 @@ func NewServer(ip string, port int) *Server {
 	return server
 }
 
-func (server *Server) Handler(accept net.Conn) {
+func (server *Server) Handler(conn net.Conn) {
 	fmt.Println("handler accept")
-	fmt.Println(accept)
+	fmt.Println(conn)
 }
 
 func (server *Server) start() {
