@@ -3,11 +3,17 @@ package main
 import (
 	"fmt"
 	"net"
+	"sync"
 )
 
 type Server struct {
 	Ip   string
 	Port int
+	//在线用户的列表
+	OnlineMap map[string]*User
+	mapLock   sync.RWMutex
+	//消息广播的channel
+	Message chan string
 }
 
 func NewServer(ip string, port int) *Server {
